@@ -10,12 +10,12 @@
     ext.settexture = function(obj, tex) {
         var anobj = JSON.parse(obj);
         anobj['tex'] = tex;
-        return anobj;
+        return JSON.stringify(anobj);
     };
     ext.setshape = function(pro, shp) {
         var anobj = JSON.parse(obj);
         anobj['model'] = shp;
-        return anobj;
+        return JSON.stringify(anobj);
     };
     ext.doRend = function(obj) {
         reset(new DisplyObject(), new DisplyObject());
@@ -26,7 +26,11 @@
         setRenderView();
     };
     ext.npos= function(x, y, z){
-        
+        inner_x = x;
+        inner_y = y;
+        inner_z = z;
+    };
+    ext.parse
     var descriptor = {
         blocks: [
           ["r", "new object", "add3dobj"],
